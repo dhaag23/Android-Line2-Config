@@ -79,14 +79,16 @@ public class Main extends Activity implements TextWatcher {
 		@Override
 		public void onReceive(Context context, Intent intent) {
 			Bundle bundle = getResultExtras(false);
-			String softphoneServerIP = bundle.getString(INTERNAL_CONFIG_IP_EXTRA);
-			String softphoneServerType = bundle.getString(INTERNAL_CONFIG_TYPE_EXTRA);
-			boolean showVQERecording = bundle.getBoolean(INTERNAL_CONFIG_SHOW_VQE_EXTRA, false);
-			Log.d("Line2-Config", "Get config returns: server IP address " + softphoneServerIP + " for " + softphoneServerType + "(showVQERecording=" + showVQERecording + ")");
-			
-			typeSpinner.setSelection(typeToPosition(softphoneServerType));
-			ipAddress.setText(softphoneServerIP);
-			showVQERecordingCheck.setChecked(showVQERecording);
+			if (bundle != null) {
+				String softphoneServerIP = bundle.getString(INTERNAL_CONFIG_IP_EXTRA);
+				String softphoneServerType = bundle.getString(INTERNAL_CONFIG_TYPE_EXTRA);
+				boolean showVQERecording = bundle.getBoolean(INTERNAL_CONFIG_SHOW_VQE_EXTRA, false);
+				Log.d("Line2-Config", "Get config returns: server IP address " + softphoneServerIP + " for " + softphoneServerType + "(showVQERecording=" + showVQERecording + ")");
+				
+				typeSpinner.setSelection(typeToPosition(softphoneServerType));
+				ipAddress.setText(softphoneServerIP);
+				showVQERecordingCheck.setChecked(showVQERecording);
+			}
 		}
 	};
     
