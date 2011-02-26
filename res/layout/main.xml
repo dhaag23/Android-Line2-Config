@@ -4,29 +4,35 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
+    <Spinner	android:id="@+id/type"
+    			android:layout_width="fill_parent"
+    			android:layout_margin="5dip"
+    			android:layout_height="wrap_content"/>
 
-<EditText	android:layout_height="wrap_content"
-			android:hint="Enter IP address string"
-			android:layout_width="fill_parent"
-			android:layout_margin="5dip"
-			android:id="@+id/ip_address"
-			android:inputType="phone"/>
+	<EditText	android:layout_height="wrap_content"
+				android:hint="Enter IP address string"
+				android:layout_width="fill_parent"
+				android:layout_margin="5dip"
+				android:id="@+id/ip_address"
+				android:inputType="phone"/>
 
-<Spinner	android:layout_height="wrap_content"
-			android:layout_width="fill_parent"
-			android:layout_margin="5dip"
-			android:id="@+id/type"/>
-
-<Button		android:layout_height="wrap_content"
-			android:text="Save"
-			android:id="@+id/save"
-			android:layout_width="fill_parent"
-			android:layout_margin="5dip"/>
-
-<CheckBox	android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:id="@+id/show_vqe_recording"
-			android:text="Show debug settings (VQE Recording, etc)"
-			android:layout_margin="5dip"/>
+	<EditText	android:layout_height="wrap_content"
+				android:hint="Enter remote API url"
+				android:layout_width="fill_parent"
+				android:layout_margin="5dip"
+				android:id="@+id/remote_api_url"
+				android:inputType="textUri"/>
+	
+	<Button		android:layout_height="wrap_content"
+				android:text="Save"
+				android:id="@+id/save"
+				android:layout_width="fill_parent"
+				android:layout_margin="5dip"/>
+	
+	<CheckBox	android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/show_debug_settings"
+				android:text="Show debug settings (VQE Recording, etc)"
+				android:layout_margin="5dip"/>
 
 </LinearLayout>
